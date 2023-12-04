@@ -53,14 +53,14 @@ int main()
     World world;
 
     // TODO: 6. uncomment one by one and render the following worlds
-    world.generate_scene_one_diffuse();
+    // world.generate_scene_one_diffuse();
     // world.generate_scene_one_specular();
-    // world.generate_scene_multi_diffuse();
+    world.generate_scene_multi_diffuse();
     // world.generate_scene_multi_specular();
     // world.generate_scene_all();
 
     // TODO: 1. set your own path for output image
-    std::string result_ppm_path = "/home/rfan/code/openGL/rayTracing/screenshots/result.ppm";
+    std::string result_ppm_path = "/home/rfan/code/openGL/rayTracing/screenshots/mdiffuse.ppm";
 
     std::ofstream fout(result_ppm_path);
     fout << "P3\n"

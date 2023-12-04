@@ -30,6 +30,17 @@ HitResult World::hit(Ray &ray, float min_t, float max_t)
     // TODO: 3. loop over each sphere in m_spheres
     // call sphere->hit(...)
     // hit_result should record the nearest hit
+
+    float closest_t = max_t;
+    for (auto sphere : m_spheres)
+    {
+        HitResult result = sphere->hit(ray, min_t, max_t);
+        if (result.m_isHit && result.m_t < closest_t)
+        {
+            closest_t = result.m_t;
+            hit_result = result;
+        }
+    }
     return hit_result;
 }
 
